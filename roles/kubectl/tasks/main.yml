@@ -1,0 +1,13 @@
+---
+# tasks file for kubectl
+- name: Install kubectl
+  apt:
+    name: kubectl={{ KUBECTL_VERSION }}
+    state: present
+    update_cache: yes
+  tags: install
+
+- name: Hold kubectl
+  dpkg_selections:
+    name: kubectl
+    selection: hold

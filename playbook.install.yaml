@@ -5,9 +5,9 @@
   vars:
     containerd_config_default_write: true
     containerd_config_cgroup_driver_systemd: true
-    KUBEADM_VERSION: 1.25.0-00
-    KUBECTL_VERSION: 1.25.0-00
-    KUBELET_VERSION: 1.25.0-00
+    kubeadm_version: 1.25.0-00
+    kubectl_version: 1.25.0-00
+    kubelet_version: 1.25.0-00
     #still need to make these defaults in the containerd task
   roles:
     - kernel_config

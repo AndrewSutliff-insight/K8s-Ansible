@@ -2,7 +2,7 @@
 # tasks file for kubectl
 - name: Install kubectl
   apt:
-    name: kubectl={{ KUBECTL_VERSION }}
+    name: kubectl={{ kubectl_version }}
     state: present
     update_cache: yes
   tags: install

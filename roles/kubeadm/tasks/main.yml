@@ -2,7 +2,7 @@
 # tasks file for kubeadm
 - name: Install kubeadm
   apt:
-    name: kubeadm={{ KUBEADM_VERSION }}
+    name: kubeadm={{ kubeadm_version }}
     state: present
     update_cache: yes
   tags: install

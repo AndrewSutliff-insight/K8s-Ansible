@@ -25,6 +25,7 @@
     # pod CIDR range for cluster init, change this to match your CNI pluggin CIDR configuration
     host_ip: 172.31.23.158 #not sure how to grab this systematically yet
     host_name: k8s-controlplane #this one as well, check old versions for how it used to be set
+    weave: true #set the name of the CNI plugin you want to use to true, currently supports only weave
   roles:
     - cluster_init
     - cni

@@ -5,7 +5,7 @@
     name: kubeadm={{ kubeadm_version }}
     state: present
     update_cache: yes
-    allow_change_held_packages: true
+    # allow_change_held_packages: true
     allow_downgrade: true
   tags: install
 

@@ -31,13 +31,13 @@
   tags: pre-k8s-init
 
 - name: Load overlay
-  comminity.general.modprobe:
+  community.general.modprobe:
     name: overlay
     state: present
   tags: pre-k8s-init
 
 - name: Load br_netfilter
-  comunity.general.modprobe:
+  community.general.modprobe:
     name: br_netfilter
     state: present
   tags: pre-k8s-init

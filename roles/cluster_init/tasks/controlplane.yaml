@@ -2,8 +2,8 @@
 - name: Initialize the Kubernetes cluster using kubeadm
   command: |
     kubeadm init --apiserver-advertise-address="{{ host_ip }}" \
-    --node-name "{{ host_name }}"" \
-    --pod-network-cidr={{ pod_network_cidr }}
+    --node-name="{{ host_name }}" \
+    --pod-network-cidr="{{ pod_network_cidr }}"
 #need to change variables
   tags: cluster-init
 

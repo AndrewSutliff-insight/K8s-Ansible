@@ -1,7 +1,7 @@
 ---
 - hosts: all
   become: yes
-  become_user: cloud_user
+  become_user: root
   vars:
     containerd_config_default_write: true
     containerd_config_cgroup_driver_systemd: true

@@ -3,7 +3,7 @@
   become: yes
   vars:
     containerd_config_default_write: true
-    containerd_config_cgroup_driver_systemd: true'
+    containerd_config_cgroup_driver_systemd: true
     #still need to make these defaults in the containerd task
   roles:
     - kernel_config

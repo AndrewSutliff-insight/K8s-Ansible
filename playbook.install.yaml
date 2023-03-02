@@ -24,7 +24,11 @@
     pod_network_cidr: 10.244.0.0/16 # pod CIDR range for cluster init, change this to match your CNI pluggin CIDR configuration
     host_ip: "{{ ansible_default_ipv4.address }}" 
     host_name: "{{ inventory_hostname }}"
-    weave: true #set the name of the CNI plugin you want to use to true, currently supports only weave
+    kube_user: "{{ item }}"
+    kube_config_path: "/home/{{ item }}/.kube/config/"
+    weave: true #set the name of the CNI plugin you want to use to true, currently supports only weave:w
+  with_items:
+    - cloud_user #list of users you want to add kubeconfig to
   roles:
     - cluster_init
     - cni

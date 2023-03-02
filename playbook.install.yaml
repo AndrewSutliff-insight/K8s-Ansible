@@ -22,7 +22,7 @@
   become_user: root
   vars:
     pod_network_cidr: 10.244.0.0/16 # pod CIDR range for cluster init, change this to match your CNI pluggin CIDR configuration
-    host_ip: "{{ ansible_facts.ansible_all_ipv4_addresses }}" 
+    host_ip: "{{ ansible_default_ipv4.address }}" 
     host_name: "{{ inventory_hostname }}"
     weave: true #set the name of the CNI plugin you want to use to true, currently supports only weave
   roles:

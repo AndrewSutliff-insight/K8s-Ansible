@@ -21,10 +21,9 @@
   become: yes
   become_user: root
   vars:
-    pod_network_cidr: 10.244.0.0/16
-    # pod CIDR range for cluster init, change this to match your CNI pluggin CIDR configuration
-    host_ip: 172.31.23.158 #not sure how to grab this systematically yet
-    host_name: k8s-controlplane #this one as well, check old versions for how it used to be set
+    pod_network_cidr: 10.244.0.0/16 # pod CIDR range for cluster init, change this to match your CNI pluggin CIDR configuration
+    host_ip: {{ ansible_facts.eth0.ipv4.address }} 
+    host_name: {{ inventory_hostname }} 
     weave: true #set the name of the CNI plugin you want to use to true, currently supports only weave
   roles:
     - cluster_init

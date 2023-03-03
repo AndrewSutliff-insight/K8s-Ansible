@@ -5,7 +5,6 @@
     name: containerd.io
     update_cache: yes
     state: present
-    default_release: xenial stable
 
   tags: pre-k8s-init
 

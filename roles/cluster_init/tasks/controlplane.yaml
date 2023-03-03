@@ -18,7 +18,16 @@
     dest: "/tmp/join-command.sh"
   tags: cluster-init
 
+- name: mkdir for kubeconfig
+  file: 
+    path: "{{ kubeconfig_path }}"
+    state: touch
+    owner: "{{ kube_user }}"
+    group: "{{ kube_user }}"
+    mode: a=wrx
+  tags: cluster-init
+
 - name: Create kubeconfig for local user
   command: |
     kubeadm kubeconfig user --client-name="{{ kube_user }}" \
-    --config="{{ kube_config_path }}
+    --config="{{ kube_config_path }}"

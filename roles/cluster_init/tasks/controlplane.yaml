@@ -20,7 +20,11 @@
 
 - name: mkdir for kubeconfig
   file: 
-    path: "{{ kube_config_path }}"
+    path: "{{ kubeconfig_path }}"
+    state: touch
+    owner: "{{ kube_user }}"
+    group: "{{ kube_user }}"
+    mode: a=wrx
   tags: cluster-init
 
 - name: Create kubeconfig for local user

@@ -20,13 +20,17 @@
 
 - name: mkdir for kubeconfig
   file: 
-    path: "{{ kubeconfig_path }}"
-    state: touch
+    path: "/home/{{ kube_user }}/.kube"
+    state: directory
     owner: "{{ kube_user }}"
     group: "{{ kube_user }}"
   tags: cluster-init
 
-- name: Create kubeconfig for local user
-  copy:
-    src: /etc/kubernetes/admin.conf
-    dest: "{{ kube_config_path }}"
+#- name: Create kubeconfig for local user
+#  become: true
+#  become_user: root
+#  copy:
+#    src: /etc/kubernetes/admin.conf
+#    dest: "{{ kube_config_path }}"
+#    owner: "{{ kube_user }}"
+#    group: "{{ kube_user }}"

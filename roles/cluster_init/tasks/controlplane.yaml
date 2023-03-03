@@ -29,4 +29,4 @@
 - name: Create kubeconfig for local user
   copy:
     src: /etc/kubernetes/admin.conf
-    dest: "{{ kubeconfig_path }}"
+    dest: "{{ kube_config_path }}"

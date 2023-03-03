@@ -26,7 +26,7 @@
     host_name: "{{ inventory_hostname }}"
     kube_user: "cloud_user"
     kube_config_path: "/home/{{ kube_user }}/.kube/config"
-    weave: true #set the name of the CNI plugin you want to use to true, currently supports only weave:w
+    flannel: true #set the name of the CNI plugin you want to use to true, currently supports only weave:w
   roles:
     - cluster_init
     - cni

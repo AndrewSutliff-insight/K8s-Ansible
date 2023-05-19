@@ -22,7 +22,7 @@
   become_user: root
   vars:
     pod_network_cidr: 10.244.0.0/16 # pod CIDR range for cluster init, change this to match your CNI pluggin CIDR configuration
-    host_ip: "{{ ansible_default_ipv4.address }}" 
+    host_ip: "{{ ansible_default_ipv4.address }}"
     host_name: "{{ inventory_hostname }}"
     kube_user: "cloud_user"
     kube_config_path: "/home/{{ kube_user }}/.kube/config"
